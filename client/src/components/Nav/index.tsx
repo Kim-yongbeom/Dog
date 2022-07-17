@@ -6,7 +6,7 @@ import { FcSearch } from "react-icons/fc";
 const NavbarWrapper = styled.div`
   position: fixed;
   width: 100%;
-  background: rgba(255, 186, 1);
+  background: rgba(200, 200, 200, 0.5);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
 `;
 
@@ -22,7 +22,7 @@ const Title = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: black;
+  color: #212629;
 `;
 
 const TitleLogo = styled.img`
@@ -31,16 +31,17 @@ const TitleLogo = styled.img`
 `;
 
 const TitleText = styled.div`
-  font-size: 25px;
+  font-size: 1.5rem;
   font-weight: bold;
 `;
 
-const ActionItemContainer = styled.div`
+const InfoWrapper = styled.div`
   margin-right: 1rem;
 `;
 
-const ActionItem = styled.span`
-  font-size: 25px;
+const SearchWrapper = styled.div``;
+
+const SearchItem = styled.span`
   padding: 0 1rem;
 `;
 
@@ -52,13 +53,13 @@ const Navbar: React.FC = () => {
           <TitleLogo src="./dogImg.png" alt="dog" />
           <TitleText>TOTO</TitleText>
         </Title>
-        <ActionItemContainer>
-          <ActionItem>
-            <FcSearch />
-          </ActionItem>
-          <ActionItem>logo</ActionItem>
-          <ActionItem></ActionItem>
-        </ActionItemContainer>
+        <InfoWrapper>
+          <SearchWrapper>
+            <SearchItem>
+              <FcSearch />
+            </SearchItem>
+          </SearchWrapper>
+        </InfoWrapper>
       </Wrapper>
     </NavbarWrapper>
   );
