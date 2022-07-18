@@ -35,14 +35,83 @@ const TitleText = styled.div`
   font-weight: bold;
 `;
 
-const InfoWrapper = styled.div`
-  margin-right: 1rem;
+const SearchMenu = styled.li`
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  height: 3.875rem;
+  transition: all 0.5s ease 0s;
+  position: relative;
 `;
 
-const SearchWrapper = styled.div``;
+const SearchContainer = styled.div`
+  position: relative;
+  width: 100%;
+`;
 
-const SearchItem = styled.span`
-  padding: 0 1rem;
+// const SearchResultWrapper = styled.div`
+//   position: absolute;
+//   top: 60px;
+//   left: 0;
+//   z-index: 9999999;
+//   background-color: #fff;
+//   width: 100%;
+//   border-radius: 8px;
+//   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+//   max-height: 480px;
+//   overflow-y: scroll;
+// `;
+
+// const SearchResultListItem = styled.li`
+//   padding: 4px 6px;
+//   box-sizing: border-box;
+//   color: #222;
+//   font-size: 16px;
+//   width: 100%;
+//   height: 24px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+//   &:hover {
+//     background-color: #eee;
+//   }
+// `;
+
+// const SearchResultList = styled.ul`
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+// `;
+
+const SearchFormWrapper = styled.div``;
+
+const SearchForm = styled.form``;
+
+const SearchLabel = styled.label`
+  background: rgb(245, 245, 247);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 68%;
+  height: 2.375rem;
+  border-radius: 0.625rem;
+  padding: 0.4375rem 0.5rem;
+`;
+
+const SearchInput = styled.input`
+  font-size: 0.875rem;
+  font-weight: 400;
+  background: transparent;
+  width: 100%;
+  padding: 0 0 0 0.5rem;
+  border: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  caret-color: rgb(53, 53, 53);
+  line-height: 1.4375rem;
 `;
 
 const Navbar: React.FC = () => {
@@ -53,13 +122,32 @@ const Navbar: React.FC = () => {
           <TitleLogo src="./dogImg.png" alt="dog" />
           <TitleText>TOTO</TitleText>
         </Title>
-        <InfoWrapper>
-          <SearchWrapper>
-            <SearchItem>
-              <FcSearch />
-            </SearchItem>
-          </SearchWrapper>
-        </InfoWrapper>
+        <SearchMenu>
+          <SearchContainer>
+            <SearchFormWrapper>
+              <SearchForm>
+                <SearchLabel>
+                  <FcSearch />
+                  <SearchInput placeholder="견종의 이름을 검색해보세요." />
+                </SearchLabel>
+              </SearchForm>
+            </SearchFormWrapper>
+          </SearchContainer>
+          {/* <SearchResultWrapper>
+            <SearchResultList>
+              {searchResult?.results.map((searchResultItem) => (
+                <Link
+                  href={`/movie/${searchResultItem.id}`}
+                  key={searchResultItem.id}
+                >
+                  <SearchResultListItem>
+                    {searchResultItem.title}
+                  </SearchResultListItem>
+                </Link>
+              ))}
+            </SearchResultList>
+          </SearchResultWrapper> */}
+        </SearchMenu>
       </Wrapper>
     </NavbarWrapper>
   );
