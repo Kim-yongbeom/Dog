@@ -1,6 +1,7 @@
 // npm i @emotion/styled @emotion/react
 // npm i react-router-dom
 // npm install react-icons --save
+// npm i axios
 
 import React from "react";
 import { Routes, Route } from "react-router-dom";
