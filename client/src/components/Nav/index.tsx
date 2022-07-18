@@ -23,6 +23,9 @@ const Title = styled(Link)`
   align-items: center;
   text-decoration: none;
   color: #212629;
+  @media (max-width: 700px) {
+    margin: 0;
+  }
 `;
 
 const TitleLogo = styled.img`
@@ -33,6 +36,9 @@ const TitleLogo = styled.img`
 const TitleText = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 const SearchMenu = styled.li`
@@ -99,6 +105,9 @@ const SearchLabel = styled.label`
   height: 2.375rem;
   border-radius: 0.625rem;
   padding: 0.4375rem 0.5rem;
+  @media (max-width: 700px) {
+    margin-left: 1rem;
+  }
 `;
 
 const SearchInput = styled.input`
