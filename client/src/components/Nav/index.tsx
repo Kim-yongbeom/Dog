@@ -6,7 +6,7 @@ import { FcSearch } from "react-icons/fc";
 const NavbarWrapper = styled.div`
   position: fixed;
   width: 100%;
-  background: rgba(200, 200, 200, 0.5);
+  background: rgba(200, 200, 200);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
 `;
 
@@ -106,7 +106,7 @@ const SearchLabel = styled.label`
   border-radius: 0.625rem;
   padding: 0.4375rem 0.5rem;
   @media (max-width: 700px) {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
   }
 `;
 
@@ -123,26 +123,52 @@ const SearchInput = styled.input`
   line-height: 1.4375rem;
 `;
 
+const SideNavWrapper = styled.div`
+  position: fixed;
+  width: 100%;
+  margin-top: 5rem;
+  background: rgba(255, 255, 255);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+`;
+const SideNav = styled.div`
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; ;
+`;
+
+const SideLink = styled(Link)`
+  margin: 0 6rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #212629;
+  @media (max-width: 700px) {
+    margin: 0 2rem;
+  }
+`;
+
 const Navbar: React.FC = () => {
   return (
-    <NavbarWrapper>
-      <Wrapper>
-        <Title to="/">
-          <TitleLogo src="./dogImg.png" alt="dog" />
-          <TitleText>TOTO</TitleText>
-        </Title>
-        <SearchMenu>
-          <SearchContainer>
-            <SearchFormWrapper>
-              <SearchForm>
-                <SearchLabel>
-                  <FcSearch />
-                  <SearchInput placeholder="견종의 이름을 검색해보세요." />
-                </SearchLabel>
-              </SearchForm>
-            </SearchFormWrapper>
-          </SearchContainer>
-          {/* <SearchResultWrapper>
+    <>
+      <NavbarWrapper>
+        <Wrapper>
+          <Title to="/">
+            <TitleLogo src="./dogImg.png" alt="dog" />
+            <TitleText>TOTO</TitleText>
+          </Title>
+          <SearchMenu>
+            <SearchContainer>
+              <SearchFormWrapper>
+                <SearchForm>
+                  <SearchLabel>
+                    <FcSearch />
+                    <SearchInput placeholder="견종의 이름을 검색해보세요." />
+                  </SearchLabel>
+                </SearchForm>
+              </SearchFormWrapper>
+            </SearchContainer>
+            {/* <SearchResultWrapper>
             <SearchResultList>
               {searchResult?.results.map((searchResultItem) => (
                 <Link
@@ -156,9 +182,17 @@ const Navbar: React.FC = () => {
               ))}
             </SearchResultList>
           </SearchResultWrapper> */}
-        </SearchMenu>
-      </Wrapper>
-    </NavbarWrapper>
+          </SearchMenu>
+        </Wrapper>
+      </NavbarWrapper>
+      <SideNavWrapper>
+        <SideNav>
+          <SideLink to="/">홈</SideLink>
+          <SideLink to="/">커뮤니티</SideLink>
+          <SideLink to="/">좋아요</SideLink>
+        </SideNav>
+      </SideNavWrapper>
+    </>
   );
 };
 
