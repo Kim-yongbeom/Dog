@@ -1,17 +1,8 @@
-import styled from "@emotion/styled/macro";
 import React from "react";
-import SearchImage from "../components/SearchImage";
-
-const Base = styled.div`
-  padding-top: 5rem;
-`;
+import SearchImageContainer from "../containers/SearchImageContainer";
 
 const Home: React.FC = () => {
-  return (
-    <Base>
-      <SearchImage />
-    </Base>
-  );
+  return <SearchImageContainer />;
 };
 
 export default Home;
