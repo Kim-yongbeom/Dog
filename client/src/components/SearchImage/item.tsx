@@ -50,8 +50,8 @@ const Item: React.FC = () => {
         <Image src="https://img.hankyung.com/photo/202109/99.26479073.1.jpg" />
       </ImageWrapper>
       <Info>
-        <Title>sea</Title>
-        <Description>hi</Description>
+        <Title>웰시코기</Title>
+        <Description>다리가 짧다...</Description>
       </Info>
     </Container>
   );
