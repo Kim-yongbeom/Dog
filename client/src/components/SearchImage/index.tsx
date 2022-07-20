@@ -16,16 +16,16 @@ const Base = styled.div`
   }
 `;
 
-type ImageReqType = {
-  id: string;
-  url: string;
-};
+// type ImageReqType = {
+//   id: string;
+//   url: string;
+// };
 
-interface SearchImageProps {
-  image: (reqData: ImageReqType) => void;
-}
+// interface SearchImageProps {
+//   image: (reqData: ImageReqType) => void;
+// }
 
-const SearchImage: React.FC<SearchImageProps> = ({ image }) => {
+const SearchImage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {

@@ -5,12 +5,10 @@ import Skeleton from "../Skeleton";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  box-shadow: rgb(0 0 0 / 4%) 0rem 1rem 0rem
-  border-radius: 0.25rem;
 `;
 
 const ImageWrapper = styled.div`
-  width: 100%;
+  width: 100%;  
 `;
 
 const Info = styled.div`

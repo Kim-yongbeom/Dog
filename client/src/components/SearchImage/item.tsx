@@ -4,8 +4,7 @@ import styled from "@emotion/styled/macro";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  box-shadow: rgb(0 0 0 / 4%) 0rem 1rem 0rem
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 `;
 
 const ImageWrapper = styled.div`
@@ -16,6 +15,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 0.5rem;
 `;
 
 const Info = styled.div`
@@ -36,7 +36,7 @@ const Title = styled.h4`
 
 const Description = styled.p`
   margin: 0.5rem 0 0 0;
-  padding: 0
+  padding: 0;
   font-size: 1rem;
   @media (max-width: 700px) {
     font-size: 0.8rem;
@@ -47,7 +47,7 @@ const Item: React.FC = () => {
   return (
     <Container>
       <ImageWrapper>
-        <Image src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg" />
+        <Image src="https://img.hankyung.com/photo/202109/99.26479073.1.jpg" />
       </ImageWrapper>
       <Info>
         <Title>sea</Title>
