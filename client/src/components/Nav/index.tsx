@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import { FcSearch } from "react-icons/fc";
 
 const NavbarWrapper = styled.div`
+  z-index: 999;
   position: fixed;
   width: 100%;
-  background: rgba(200, 200, 200);
+  background: rgba(256, 256, 256);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
 `;
 
@@ -124,6 +125,7 @@ const SearchInput = styled.input`
 `;
 
 const SideNavWrapper = styled.div`
+  z-index: 998;
   position: fixed;
   width: 100%;
   margin-top: 5rem;
