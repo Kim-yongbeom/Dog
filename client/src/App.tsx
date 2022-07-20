@@ -16,7 +16,7 @@ import Navbar from "./components/Nav";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
 import NotFound from "./pages/NotFound";
-// import SignIn from "./pages/SignIn";
+import SignIn from "./pages/SignIn";
 
 const Base = styled.div`
   padding-top: 8rem;
@@ -27,13 +27,13 @@ function App() {
     <ErrorBoundary FallbackComponent={Error}>
       <BrowserRouter>
         <Navbar />
-        <Switch>
           <Base>
+          <Switch>
             <Route exact path="/" component={Home} />
-            {/* <Route path="/signin" element={<SignIn />} /> */}
-            <Route component={NotFound} />
+            <Route path="/signin" component={SignIn} />
+            <Route path="*" component={NotFound} />
+            </Switch>
           </Base>
-        </Switch>
       </BrowserRouter>
     </ErrorBoundary>
   );
