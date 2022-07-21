@@ -19,7 +19,7 @@ const pulseKeyframe = keyframes`
     opacity: 1
   }
   50% {
-    opacity: 0.4
+    opacity: 0.4;
   }
   100% {
     opacity: 1
@@ -27,7 +27,7 @@ const pulseKeyframe = keyframes`
 `;
 
 const pulseAnimation = css`
-  animation: ${pulseKeyframe} 1.5s ease-in-out infinite;
+  animation: ${pulseKeyframe} 1s ease-in-out infinite;
 `;
 
 const Base = styled.div<Props>`
@@ -52,7 +52,7 @@ const Skeleton: React.FC<Props> = ({
   rounded,
   count,
   unit = "%",
-  color = "#EEE",
+  color = "#DDD",
   style,
 }) => {
   const content = useMemo(
