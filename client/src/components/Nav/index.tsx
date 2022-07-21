@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled/macro";
 import { Link } from "react-router-dom";
 import { FcSearch } from "react-icons/fc";
+import useWindowScroll from "../../hooks/useWindowScroll";
 
 const NavbarWrapper = styled.div`
   z-index: 999;
@@ -132,11 +133,20 @@ const SideNavWrapper = styled.div`
   background: rgba(255, 255, 255);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
 `;
+
 const SideNav = styled.div`
   height: 3rem;
   display: flex;
   align-items: center;
-  justify-content: center; ;
+  justify-content: center;
+`;
+
+const SideHideNav = styled.div`
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
 `;
 
 const SideLink = styled(Link)`
@@ -151,6 +161,8 @@ const SideLink = styled(Link)`
 `;
 
 const Navbar: React.FC = () => {
+  const navHide = useWindowScroll();
+
   return (
     <>
       <NavbarWrapper>
@@ -188,11 +200,20 @@ const Navbar: React.FC = () => {
         </Wrapper>
       </NavbarWrapper>
       <SideNavWrapper>
-        <SideNav>
-          <SideLink to="/">홈</SideLink>
-          <SideLink to="/">커뮤니티</SideLink>
-          <SideLink to="/">좋아요</SideLink>
-        </SideNav>
+        {
+          navHide  === true ?
+          <SideHideNav>
+            <SideLink to="/">홈</SideLink>
+            <SideLink to="/">커뮤니티</SideLink>
+            <SideLink to="/">좋아요</SideLink>
+          </SideHideNav>
+          :
+          <SideNav>
+            <SideLink to="/">홈</SideLink>
+            <SideLink to="/">커뮤니티</SideLink>
+            <SideLink to="/">좋아요</SideLink>
+          </SideNav>
+        }
       </SideNavWrapper>
     </>
   );
