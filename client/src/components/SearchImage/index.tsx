@@ -16,16 +16,16 @@ const Base = styled.div`
   }
 `;
 
-// type ImageReqType = {
-//   id: string;
-//   url: string;
-// };
+type ImageReqType = {
+  id: string;
+  url: string;
+};
 
-// interface SearchImageProps {
-//   image: (reqData: ImageReqType) => void;
-// }
+interface SearchImageProps {
+  image: (reqData: ImageReqType) => void;
+}
 
-const SearchImage: React.FC = () => {
+const SearchImage: React.FC<SearchImageProps> = ({ image }) => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -36,7 +36,9 @@ const SearchImage: React.FC = () => {
     <Base>
       {loading
         ? Array.from({ length: 20 }).map((_, idx) => <Placeholder key={idx} />)
-        : Array.from({ length: 20 }).map((_, idx) => <Item key={idx} />)}
+        : Array.from({ length: 20 }).map((_, idx) => (
+            <Item key={idx} image={image({ id, url })} />
+          ))}
     </Base>
   );
 };
