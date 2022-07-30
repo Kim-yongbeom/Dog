@@ -21,11 +21,7 @@ type ImageReqType = {
   url: string;
 };
 
-interface SearchImageProps {
-  image: (reqData: ImageReqType) => void;
-}
-
-const SearchImage: React.FC<SearchImageProps> = ({ image }) => {
+const SearchImage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -36,9 +32,7 @@ const SearchImage: React.FC<SearchImageProps> = ({ image }) => {
     <Base>
       {loading
         ? Array.from({ length: 20 }).map((_, idx) => <Placeholder key={idx} />)
-        : Array.from({ length: 20 }).map((_, idx) => (
-            <Item key={idx} image={image({ id, url })} />
-          ))}
+        : Array.from({ length: 20 }).map((_, idx) => <Item />)}
     </Base>
   );
 };
