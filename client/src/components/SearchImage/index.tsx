@@ -16,11 +16,6 @@ const Base = styled.div`
   }
 `;
 
-type ImageReqType = {
-  id: string;
-  url: string;
-};
-
 const SearchImage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -32,7 +27,7 @@ const SearchImage: React.FC = () => {
     <Base>
       {loading
         ? Array.from({ length: 20 }).map((_, idx) => <Placeholder key={idx} />)
-        : Array.from({ length: 20 }).map((_, idx) => <Item />)}
+        : Array.from({ length: 20 }).map((_, idx) => <Item key={idx} />)}
     </Base>
   );
 };
